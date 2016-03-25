@@ -17,7 +17,17 @@ gem 'mini_magick',             '4.1.0'
 gem 'fog',                     '1.36.0'
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
-
+gem 'devise'
+gem 'toastr-rails'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'paperclip'
+gem 'geocoder'
+gem 'jquery-ui-rails'
+gem 'private_pub'
+gem 'thin'
+gem 'ransack'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
