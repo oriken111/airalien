@@ -14,22 +14,24 @@
       <div class="panel-body">
         <% @trips.each do |trip| %>
           <div class="row">
-            <div class="col-md-2">
-              <%= trip.start_date.strftime('%v') %>
-            </div>
-            <div class="col-md-6">
-              <%= link_to room_path(trip.room) do %>
-                <%= image_tag trip.room.photos[0].image.url(:thumb) %>
-              <% end %>
-            </div>
-            <div class="col-md-2">
-              <%= link_to user_path(trip.room.user) do %>
-                <%= image_tag avatar_url(trip.room.user),class: "img-circle avatar-medium" %>
-              <% end %>
-            </div>
-            <div class="col-md-2">
-              <h4>$<%= trip.total %></h4>
-            </div>
+            <% if trip %>
+              <div class="col-md-2">
+                <%= trip.start_date.strftime('%v') %>
+              </div>
+              <div class="col-md-6">
+                <%= link_to rooms_path(trip.room) do %>
+                  <%= image_tag trip.room.photos[0].image.url(:thumb) %>
+                <% end %>
+              </div>
+              <div class="col-md-2">
+                <%= link_to user_path(trip.room.user) do %>
+                  <%= image_tag avatar_url(trip.room.user),class: "img-circle avatar-medium" %>
+                <% end %>
+              </div>
+              <div class="col-md-2">
+                <h4>$<%= trip.total %></h4>
+              </div>
+            <% end %>
           </div>
           <hr />
         <% end %>

@@ -22,6 +22,19 @@
               <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "Email"  %>
             </div>
 
+            <div class="row">
+              <div class="col-md-4">
+                <%= image_tag avatar_url(@user), class:"avatar-medium" %>
+              </div>
+              <div class="form-group col-md-8">
+                <span class="btn btn-default btn-file">
+                    <i class="fa fa-cloud-upload fa-lg"></i> Upload your photo
+                    <%= file_field :image, type: :file %>
+                </span>
+  <!--              <%= f.text_area :image, rows: 5, cols: 25, autofocus: true, :class => "form-control", :placeholder => "Description" %> -->
+              </div>
+            </div>
+
             <div class="form-group">
               <%= f.text_field :phone_number, autofocus: true, :class => "form-control", :placeholder => "Phone Number" %>
             </div>

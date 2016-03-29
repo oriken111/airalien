@@ -14,11 +14,11 @@
                 <div class="col-md-2">
                   <%= image_tag avatar_url(other), class: "img-circle avatar-medium" %>
                 </div>
-                <div class="col-md-2" style="word-wrap: break-word">
-                  <%= other.fullname %><br />
+                <div class="col-md-2">
+                  <%= truncate other.fullname, length: 20, ommision: '...' %><br />
                 </div>
                 <div class="col-md-8">
-                  <strong><%= conversation.messages.last.content %></strong>
+                  <%= truncate conversation.messages.last.content, length: 50, ommision: '...' %>
                   <br />
                   <%= conversation.messages.last.message_time %>
                 </div>

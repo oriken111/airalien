@@ -21,6 +21,10 @@ body {
   font-weight: 400;
 }
 
+.dropdown:hover > .dropdown-menu{
+  display: block;
+}
+
 .btn-primary.btn {
   border: 1px solid #ff5a5f;
   border-radius: 2px;

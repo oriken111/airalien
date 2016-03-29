@@ -7,7 +7,11 @@ class ApplicationController < ActionController::Base
 protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :fullname
-    devise_parameter_sanitizer.for(:account_update) << :fullname << :phone_number << :description << :email << :password
+    devise_parameter_sanitizer.for(:account_update) << :image << :fullname << :phone_number << :description << :email << :password
+  end
+
+  def initialize_omniauth_state
+    session['omniauth.state'] = response.headers['X-CSRF-Token'] = form_authenticity_token
   end
 
 end
