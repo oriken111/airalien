@@ -79,5 +79,16 @@ Rails.application.configure do
   config.serve_static_files = true
   config.assets.compile = true
   config.assets.js_compressor = :uglifier
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mandrillapp.com',
+    port: 587,
+    enable_starttls_auto: true,
+    user_name: 'oriken111@gmail.com',
+    password: 'pOKaJP2mNN4qqxL5qbJhkw',
+    authentication: 'login'
+  }
 
 end
