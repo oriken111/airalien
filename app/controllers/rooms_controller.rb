@@ -56,6 +56,9 @@ class RoomsController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
   private
     def set_room
       @room = Room.find(params[:id])
